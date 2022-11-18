@@ -2,27 +2,7 @@ version: "3.8"
 
 services:
   backend:
-    depends_on:
-      - db
     restart: always
     build: .
     ports:
       - "8008:8000"
-    links:
-      - "db:postgres1"
-
-  db:  # network alias (hostname)
-    restart: always
-    image: postgres:latest
-    environment:
-      POSTGRES_HOST: db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: django_docker_project
-    ports:
-      - "5434:5432"
-    volumes:
-      - pgdata:/var/lib/postgresql/data/
-
-volumes:
-  pgdata:

@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'django_docker_project',
         'USER': "postgres",
         'PASSWORD': "postgres",
-        'HOST': "postgres1",
+        'HOST': "host.docker.internal",
         'PORT': "5432",
     }
 }
