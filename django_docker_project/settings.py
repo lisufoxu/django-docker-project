@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+v*w50h&x@yq!gygf@c0dsdqe+w!2hp(7*ne7$l3@(%#9wr3i!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
 
 
 # Application definition
@@ -73,7 +73,16 @@ WSGI_APPLICATION = 'django_docker_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django_docker_project',
+        'USER': "postgres",
+        'PASSWORD': "postgres",
+        'HOST': "postgres1",
+        'PORT': "5432",
+    }
+}
 
 
 # Password validation
@@ -118,5 +127,3 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-from django_docker_project.settings_local import *
