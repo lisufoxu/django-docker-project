@@ -76,11 +76,11 @@ WSGI_APPLICATION = 'django_docker_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django_docker_project',
-        'USER': "postgres",
-        'PASSWORD': "postgres",
-        'HOST': "host.docker.internal",
-        'PORT': "5432",
+        'NAME': 'defaultdb',
+        'USER': "doadmin",
+        'PASSWORD': "AVNS_UUJmyaPOKeV2n41-8t3",
+        'HOST': "db-postgresql-fra1-61372-do-user-12642217-0.b.db.ondigitalocean.com",
+        'PORT': "25060",
     }
 }
 
